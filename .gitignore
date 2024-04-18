@@ -9,6 +9,10 @@
 # testing
 /coverage
 
+#data 
+/data 
+/cleanedData
+
 # next.js
 /.next/
 /out/

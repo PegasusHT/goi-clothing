@@ -12,19 +12,49 @@ model Product {
   name        String
   description String
   price       Float
-  rating      Float
-  sizes       String[]
+  rating      Float           @default(0)
+  sizes       String[]        
   made        String
-  sizefit     String
-  reviews     Review[]
-  pictures    Picture[]
+  reviews     Review[]        
+  pictures    Picture[]       @relation(fields: [pictureIDs], references: [id])
+  pictureIDs  String[]        @db.ObjectId 
   videos      Video[]
-  category    Category[]
-  type        Collection[]
+  categories  Category[]      @relation(fields: [categoryIDs], references: [id])
+  categoryIDs String[]        @db.ObjectId
+  collections  Collection[]   @relation(fields: [collectionIDs], references: [id])
+  collectionIDs String[]      @db.ObjectId
   cartItem    CartItem[]
 
   @@map("products")
 }
+
+model Picture {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  productName String[]
+  url         String
+  products     Product[]   @relation(fields: [productIDs], references: [id])
+  productIDs   String[]    @db.ObjectId
+
+  @@map("pictures")
+}
+
+model Collection {
+  id            String      @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  products      Product[]   @relation(fields: [productIDs], references: [id])
+  productIDs    String[]      @db.ObjectId
+  
+  @@map("collections")
+} 
+
+model Category {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  products    Product[]   @relation(fields: [productIDs], references: [id])
+  productIDs  String[]    @db.ObjectId
+
+  @@map("categories")
+} 
 
 model Review {
   id          String     @id @default(auto()) @map("_id") @db.ObjectId
@@ -38,15 +68,6 @@ model Review {
   @@map("reviews")
 } 
 
-model Picture {
-  id          String     @id @default(auto()) @map("_id") @db.ObjectId
-  url         String
-  product     Product    @relation(fields: [productId], references: [id])
-  productId   String    @db.ObjectId
-
-  @@map("pictures")
-}
-
 model Video {
   id          String     @id @default(auto()) @map("_id") @db.ObjectId
   url         String
@@ -55,24 +76,6 @@ model Video {
 
   @@map("videos")
 }
-
-model Category {
-  id          String     @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
-  product     Product   @relation(fields: [productId], references: [id])
-  productId   String    @db.ObjectId
-
-  @@map("categories")
-} 
-
-model Collection {
-  id          String     @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
-  product     Product   @relation(fields: [productId], references: [id])
-  productId   String   @db.ObjectId
-  
-  @@map("collections")
-} 
 
 model User {
   id          String     @id @default(auto()) @map("_id") @db.ObjectId

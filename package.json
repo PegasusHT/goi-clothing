@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "cleanData": "ts-node prisma/cleanData.ts",
+    "seed": "ts-node prisma/seed.mjs",
+    "push": "ts-node prisma/pushData.mjs",
     "start": "next start",
     "lint": "next lint"
   },
@@ -28,6 +31,7 @@
     "postcss": "^8",
     "prisma": "^5.12.1",
     "tailwindcss": "^3.3.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
