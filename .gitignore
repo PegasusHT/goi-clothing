@@ -10,8 +10,8 @@
 /coverage
 
 #data 
-/data 
-/cleanedData
+/app/data 
+/app/cleanedData
 
 # next.js
 /.next/
