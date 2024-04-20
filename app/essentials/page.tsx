@@ -9,8 +9,8 @@ type Props = {
 export const Orders: React.FC<Props> = ({  }) => {
 
     return (
-        <div className='bg-gray-500'>
-            <Header />
+        <div className=''>
+            <Header pos={'essentials'}/>
             <div className='px-3 bg-white pt-14'>
                 <h1 className='text-2xl flex justify-center items-center'>
                     ESSENTIALS

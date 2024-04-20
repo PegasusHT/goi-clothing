@@ -12,7 +12,7 @@ export default function Home() {
             backgroundImage: `url(https://goi.com/cdn/shop/files/portada-1.jpg?v=1710158440&width=1366)`,
           }}
         />
-        <Header />
+        <Header pos={'home'}/>
 
         <div className="relative z-[1] flex flex-col justify-center items-center h-full ">
           <h1 className=' text-white text-xl mb-4'>
