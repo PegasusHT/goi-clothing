@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Header from "./components/Header/Header";
 import { IoIosArrowDown } from "react-icons/io";
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -18,10 +19,13 @@ export default function Home() {
             NEW ESSENTIALS
           </h1>
           <div className=''>
-            <button className='group transition duration-500 text-white btn-md'>
-              SHOP NOW
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
-            </button>
+            <Link href='/essentials'>
+              <button className='group transition duration-500 text-white btn-md'>
+                SHOP NOW
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+              </button>
+            </Link>
+       
           </div>
         </div>
         <div className='relative flex justify-center bottom-40 mb-16 bounce'>
