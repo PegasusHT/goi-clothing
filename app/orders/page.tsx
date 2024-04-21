@@ -11,8 +11,8 @@ export const Orders: React.FC<Props> = ({  }) => {
     const { data: session } = useSession();
 
     return (
-        <div className='bg-gray-500'>
-            <Header />
+        <div className=''>
+            <Header pos={'orders'}/>
             <div className='p-5 bg-white'>
                 {session ?
                     (

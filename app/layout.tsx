@@ -20,7 +20,9 @@ export default function RootLayout({
       <html lang="en">
         <NextAuthProvider session={session}>
           <body className={inter.className}>
-            {children}
+            <div className="font-sans">
+              {children}
+            </div>
           </body>
         </NextAuthProvider>
       </html>
