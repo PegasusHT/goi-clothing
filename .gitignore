@@ -10,7 +10,6 @@
 /coverage
 
 #data 
-/app/data 
 /app/cleanedData
 
 # next.js

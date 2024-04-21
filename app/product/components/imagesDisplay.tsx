@@ -3,25 +3,25 @@ import Image from "next/image";
 import { Prisma, Picture } from "@prisma/client";
 
 interface ImageDisplayProps {
-    pictures: {
-        id: string;
-        productName: string[];
-        url: string; 
-        productIDs: string[]
-    }[]
+  pictures: {
+    id: string;
+    productName: string[];
+    url: string; 
+    productIDs: string[];
+  }[];
 }
 
 export const ImagesDisplay: React.FC<ImageDisplayProps> = ({ pictures }) => {
   return (
-    <div className="grid grid-cols-4 h-1/2 grid-flow-row gap-1 mt-1 text-sm cursor-pointer">
-      {pictures.map((picture) => (
-        <div key={picture.id} className="relative">
+    <div className="grid grid-cols-2 mb-2 h-[60rem] overflow-auto scrollbar-hide">
+      {pictures.map((picture, index) => (
+        <div key={picture.id} className={` ${index === 0 ? 'col-span-2 h-[45rem]' : ''}`}>
           <Image
             src={picture.url}
             alt="product image"
-            height={400}
-            width={400}
-            className="mb-2"
+            height={index === 0 ? 600 : 400}
+            width={index === 0 ? 600 : 400}
+            className=""
           />
         </div>
       ))}

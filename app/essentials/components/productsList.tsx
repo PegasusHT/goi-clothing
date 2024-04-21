@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import prisma from '../../../lib/db/prisma';
+import Link from 'next/link';
 
 export async function ProductsList() {
     const products = await prisma.product.findMany();
@@ -22,17 +23,20 @@ export async function ProductsList() {
                 const { id, name, price, firstPictureUrl } = product;
                 return (
                     <div key={id} className='relative'>
-                        {firstPictureUrl && (
-                            <Image
-                                src={firstPictureUrl}
-                                alt={name}
-                                height={400}
-                                width={400}
-                                className='mb-2'
-                            />
-                        )}
-                        <p className='ml-2'>{name.toUpperCase()}</p>
-                        <p className='ml-2 mb-2 text-xs'>${price}</p>
+                        <Link href={`/product/${id}`}>
+                            {firstPictureUrl && (
+                                <Image
+                                    src={firstPictureUrl}
+                                    alt={name}
+                                    height={400}
+                                    width={400}
+                                    className='mb-2'
+                                />
+                            )}
+                            <p className='ml-2'>{name.toUpperCase()}</p>
+                            <p className='ml-2 mb-2 text-xs'>${price}</p>
+                        </Link>
+                        
                     </div>
                 );
             })}

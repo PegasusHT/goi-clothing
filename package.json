@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.19",
     "@prisma/client": "^5.12.1",
     "aws-sdk": "^2.1603.0",
     "mongodb": "^6.5.0",
