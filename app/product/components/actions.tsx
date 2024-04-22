@@ -27,5 +27,5 @@ export async function incrementProductQuantity(productId: string) {
         })
     }
 
-    revalidatePath("/products/[id]", 'page')
+    revalidatePath("/product/[id]", 'page')
 }

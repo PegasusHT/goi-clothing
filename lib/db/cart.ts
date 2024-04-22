@@ -177,3 +177,4 @@ function mergeCartItems(...cartItems: CartItem[][]){
         return acc
     }, [] as CartItem[])
 }
+
