@@ -29,7 +29,7 @@ export default function CartEntry({
 
   return (
     <div>
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-start ml-5 gap-3">
         <Image
             src={firstPictureUrl}
             alt={product.name}
@@ -64,6 +64,17 @@ export default function CartEntry({
               <span className="loading loading-spinner loading-sm" />
             )}
           </div>
+
+          <button
+            className="btn btn-outline btn-black p-3 my-5"
+            onClick={() => {
+              startTransition(async () => {
+                await setProductQuantity(product.id, 0);
+              });
+            }}
+          >
+            Remove
+          </button>
         </div>
       </div>
       <div className="divider" />
