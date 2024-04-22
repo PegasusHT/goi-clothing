@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaStar } from "react-icons/fa";
 import PropertyDiv from './propertyDiv';
+import AddToCart from './addToCart';
+import { incrementProductQuantity } from './actions';
 
 export interface DetailsDivProps {
     product: {
@@ -42,15 +44,7 @@ const DetailsDiv: React.FC<DetailsDivProps> = ({ product }) => {
     
                 </label>
 
-                <div className=' group'>
-                    <button className='border-[1px] mt-5 w-full border-black hover:bg-gray-200 py-2 rounded'>
-                        ADD TO CART
-                        <span className='ml-4 text-lg opacity-50 group-hover:opacity-100'>•</span>
-                        <span className='ml-4'>
-                            ${price}
-                        </span>
-                    </button>
-                </div>
+                <AddToCart product={product} incrementProductQuantity={incrementProductQuantity}/>
                 
                 <span className='pt-4 flex flex-row pb-10 border-b-[1px] border-gray-300'>
                     Produced in <p className='font-bold ml-2'>{made}</p>

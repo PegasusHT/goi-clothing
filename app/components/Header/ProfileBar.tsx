@@ -1,8 +1,10 @@
 import React from 'react';
-import { FiShoppingBag } from "react-icons/fi";
 import ProfileBtn from '../ProfileBtn/ProfileBtn';
+import { getCart } from '@/lib/db/cart';
+import ShoppingCartButton from './Navbar/ShoppingCartButton';
 
-const ProfileBar: React.FC = () => {
+export default async function ProfileBar() {
+    const cart = await getCart();
 
     return (
         <div className="navbar-end">
@@ -14,13 +16,9 @@ const ProfileBar: React.FC = () => {
                 </svg>
             </button>
 
-            <button className="btn btn-ghost btn-circle">
-                <div className="indicator text-lg">
-                    <FiShoppingBag />
-                </div>
-            </button>
+            <ShoppingCartButton cart={cart} />
+            
         </div>
     );
 }
 
-export default ProfileBar;
