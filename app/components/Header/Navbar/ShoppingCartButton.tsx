@@ -22,14 +22,14 @@ export default function ShoppingCartButton({ cart }: ShoppingCartButtonProps) {
             <label tabIndex={0} className="btn btn-ghost btn-circle">
                 <div className="indicator text-xl">
                     <FiShoppingBag />
-                    <span className='badge badge-sm text-black indicator-item'>{cart?.size}</span>
+                    <span className='badge badge-sm text-black indicator-item'>{cart?.size || '0'}</span>
                 </div>
             </label>
 
             <div className='card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow z-30'>
                 <div className='card-body'>
                     <span className='text-base text-black '>
-                        {cart?.size} Items
+                        {cart?.size || '0'} Items
                     </span>
                     <span className='text-info'>
                         Subtototal: ${cart?.subtotal || 0}

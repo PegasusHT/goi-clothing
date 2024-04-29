@@ -3,11 +3,8 @@ import React from 'react';
 import { useSession, signIn, signOut } from "next-auth/react"
 import Header from '../components/Header/Header';
 
-type Props = {
-    orders: any
-};
 
-export const Orders: React.FC<Props> = ({  }) => {
+export function Orders() {
     const { data: session } = useSession();
 
     return (

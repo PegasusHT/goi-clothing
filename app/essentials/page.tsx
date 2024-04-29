@@ -2,11 +2,13 @@ import React from 'react';
 import Header from '../components/Header/Header';
 import DisplayTable from './components/displayTable';
 
-type Props = {
-    orders: any
-};
+type IndexSignature = {
+    [key: string]: () => JSX.Element;
+  };
+  
 
-export const Orders: React.FC<Props> = ({  }) => {
+
+export const Orders = () => {
 
     return (
         <div className=''>
@@ -21,5 +23,9 @@ export const Orders: React.FC<Props> = ({  }) => {
         </div>
     )
 }
-
+  // Now you can use Orders in an object of type IndexSignature
+  const components: IndexSignature = {
+    Orders: Orders,
+  };
+  
 export default Orders;
