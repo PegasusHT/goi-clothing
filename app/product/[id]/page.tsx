@@ -23,7 +23,7 @@ async function ProductDetails({ params: { id } }: { params: { id: string } }) {
     return( 
         <div>
             <Header pos={'product'}/>
-            <div className='grid grid-cols-2 mt-6 mx-2 '> 
+            <div className='flex flex-row justify-center mt-6 gap-20 '> 
                 <ImagesDisplay pictures={pictures} />
                 
                 <DetailsDiv product={product} />
