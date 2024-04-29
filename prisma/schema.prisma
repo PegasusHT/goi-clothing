@@ -24,9 +24,35 @@ model Product {
   collections  Collection[]   @relation(fields: [collectionIDs], references: [id])
   collectionIDs String[]      @db.ObjectId
   cartItem    CartItem[]
-
+  Hotspot     Hotspot[]
   @@map("products")
 }
+
+model Hotspot {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  x           Int
+  y           Int
+  picture     Picture    @relation(fields: [pictureId], references: [id])
+  pictureId   String     @db.ObjectId
+  product     Product    @relation(fields: [productId], references: [id])
+  productId   String     @db.ObjectId
+  
+  @@map("hotspots")
+}
+
+model Picture {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  productName String[]
+  url         String
+  products     Product[]   @relation(fields: [productIDs], references: [id])
+  productIDs   String[]    @db.ObjectId
+  Hotspot     Hotspot[]
+  hotspotIDs  String[]    @db.ObjectId
+
+  @@map("pictures")
+}
+
+
 
 model Cart {
   id        String     @id @default(auto()) @map("_id") @db.ObjectId
@@ -49,16 +75,6 @@ model CartItem {
 
   @@map("cartitems")
 } 
-
-model Picture {
-  id          String     @id @default(auto()) @map("_id") @db.ObjectId
-  productName String[]
-  url         String
-  products     Product[]   @relation(fields: [productIDs], references: [id])
-  productIDs   String[]    @db.ObjectId
-
-  @@map("pictures")
-}
 
 model Collection {
   id            String      @id @default(auto()) @map("_id") @db.ObjectId

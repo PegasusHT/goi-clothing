@@ -22,7 +22,7 @@ export default function ShoppingCartButton({ cart }: ShoppingCartButtonProps) {
             <label tabIndex={0} className="btn btn-ghost btn-circle">
                 <div className="indicator text-xl">
                     <FiShoppingBag />
-                    <span className='badge badge-sm indicator-item'>{cart?.size}</span>
+                    <span className='badge badge-sm text-black indicator-item'>{cart?.size}</span>
                 </div>
             </label>
 
