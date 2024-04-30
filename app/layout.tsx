@@ -23,7 +23,7 @@ export default function RootLayout({
         <NextAuthProvider session={session}>
           <body className={inter.className}>
             <SessionProvider>
-              <main className="font-sans">
+              <main className="font-sans overflow-x-hidden">
                 {children}
               </main>
             </SessionProvider>

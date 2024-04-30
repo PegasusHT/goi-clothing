@@ -34,13 +34,13 @@ export async function ImageDisplay({ picture, index }: ImageProps) {
     }));
 
     return (
-      <div key={id} className={ 'relative ' +
-         `${index === 0 ? ' col-span-2 h-[37rem]' : ''}`}>
+      <div key={id} className={ 'relative w-[30rem] md:w-full' +
+         `${index === 0 ? ' md:col-span-2 md:h-[37rem]' : ''}`}>
         <Image
           src={url}
           alt="product image"
-          height={index === 0 ? 600 : 400}
-          width={index === 0 ? 600 : 400}
+          height={index === 0 ? 600 : 600}
+          width={index === 0 ? 600 : 600}
           className=""
         />
         {hotspots.map((hotspot) => {
@@ -52,13 +52,13 @@ export async function ImageDisplay({ picture, index }: ImageProps) {
   }
 
   return (
-    <div key={id} className={ 'relative ' +
-       `${index === 0 ? ' col-span-2 h-[37rem]' : ''}`}>
+    <div key={id} className={ 'relative w-[30rem] md:w-full' +
+       `${index === 0 ? ' md:col-span-2 md:h-[37rem]' : ' md:h-auto'}`}>
       <Image
         src={url}
         alt="product image"
-        height={index === 0 ? 600 : 400}
-        width={index === 0 ? 600 : 400}
+        height={index === 0 ? 600 : 600}
+        width={index === 0 ? 600 : 600}
         className=""
       />
     

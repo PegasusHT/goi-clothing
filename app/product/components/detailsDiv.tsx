@@ -20,7 +20,7 @@ const DetailsDiv: React.FC<DetailsDivProps> = ({ product }) => {
     const { name, price, description, rating, made} = product;
     
     return( 
-        <div className='flex justify-center'>
+        <div className='flex justify-center mx-3 md:mx-0'>
             <div className='w-[28rem]'>
                 <div className='flex flex-row'>
                     <h1 className='text-xl mb-3'>{name.toUpperCase()}</h1>

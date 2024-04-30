@@ -2,22 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes bounce {
-  0%, 20%, 100% { transform: translateY(-25%); animationTimingFunction: 'cubic-bezier(0.8,0,1,1)'; }
-  10% { transform: none; animationTimingFunction: 'cubic-bezier(0,0,0.2,1)'; }
-  80%, 90% { transform: translateY(0); }
+.slider {
+  /* Set width for the slider container */
+  width: 800px; /* Adjust as needed */
+  scroll-snap-type: x mandatory; /* Enable scroll snapping */
+  touch-action: pan-left pan-right; /* Improve touch scrolling experience */
 }
 
-.bounce {
-  animation: bounce 2s infinite;
-  animation-delay: 1s;
-} 
-
-.scrollbar-hide {
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+.slider::-webkit-scrollbar { /* Hide scrollbar (optional) */
+  display: none;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari and Opera */
+.slider img {
+  /* Style the slider images */
+  display: block;
+  width: 100%; /* Images will fill the slider width */
+  height: auto;
+  object-fit: cover; /* Maintain image aspect ratio */
+  scroll-snap-align: start; /* Snap to image start on scroll */
 }

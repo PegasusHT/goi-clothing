@@ -18,7 +18,7 @@ export async function ProductsList() {
     }));
 
     return (
-        <div className='grid grid-cols-4 h-1/2 grid-flow-row gap-1 mt-1 text-sm cursor-pointer'>
+        <div className='grid grid-cols-2 md:grid-cols-4 h-1/2 grid-flow-row gap-1 mt-1 text-sm cursor-pointer'>
             {productsWithPictures.map((product) => {
                 const { id, name, price, firstPictureUrl } = product;
                 return (

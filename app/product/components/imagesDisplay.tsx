@@ -13,7 +13,7 @@ interface ImageDisplayProps {
 
 export const ImagesDisplay: React.FC<ImageDisplayProps> = ({ pictures }) => {
   return (
-    <div className="grid grid-cols-2 w-[28rem] mb-2 h-[60rem] overflow-auto scrollbar-hide">
+    <div className="slider relative overflow-x-hidden md:grid w-full md:grid-cols-2  md:w-[28rem] mb-2 h-[37rem] md:h-[60rem] scrollbar-hide">
       {pictures.map((picture, index) => (
         <ImageDisplay key={picture.id} picture={picture} index={index} />
       ))}
