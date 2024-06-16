@@ -9,7 +9,7 @@ export default function Home() {
       <div className='w-full h-screen relative'>
         <div className='absolute inset-0 brightness-[.8] bg-no-repeat bg-[center_top] bg-cover'
           style={{
-            backgroundImage: `url(https://goi.com/cdn/shop/files/portada-1.jpg?v=1710158440&width=1366)`,
+            backgroundImage: `url(https://goi-ecommerce.s3.us-east-2.amazonaws.com/pictures/bg-main.jpg)`,
           }}
         />
         <Header pos={'home'}/>
